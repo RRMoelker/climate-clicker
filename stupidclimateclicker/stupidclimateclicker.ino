@@ -1,4 +1,5 @@
 int SERVO_PIN = 9;
+int TIME_BETWEEN_PRESSES = 5 * 1000; // ms
 
 void setup() {
   setupServo(SERVO_PIN);
@@ -6,5 +7,5 @@ void setup() {
 
 void loop() {
   pressButton();
-  delay(2000);
+  delay(TIME_BETWEEN_PRESSES);
 }
