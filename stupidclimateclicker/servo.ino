@@ -2,13 +2,22 @@
 
 Servo servo;
 
-void setupServo(int pin) {
+int pin;
+void setupServo(int servoPin) {
+  pin = servoPin;
+}
+
+void attachServo() {
   servo.attach(pin);
 }
 
+void detachServo() {
+  servo.detach();
+}
+
 int stepDelay = 100;
-int startPos = 145;
-int pushPos = 120;
+int startPos = 130;
+int pushPos = 118;
 void pressButton() {
   int pos;
   for (pos = startPos; pos >= pushPos; --pos) {
@@ -21,3 +30,4 @@ void pressButton() {
     delay(stepDelay);
   }
 }
+
